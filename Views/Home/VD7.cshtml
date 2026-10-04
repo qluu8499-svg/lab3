@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VD7</title>
+    <style>
+        .box {
+            border: 1px solid #000;
+            padding: 15px;
+            width: 250px;
+            font-family: Arial, sans-serif;
+        }
+
+            .box h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+
+            .box p {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 13px;
+            }
+
+        .result {
+            color: red;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript">
+        function ChangeGender() {
+            var selectElement = document.getElementById("gender");
+            var selectedValue = selectElement.value;
+            var resultElement = document.getElementById("resultMessage");
+
+            if (selectedValue === "nam") {
+                resultElement.innerHTML = "Bạn đã chọn giới tính nam";
+            } else if (selectedValue === "nu") {
+                resultElement.innerHTML = "Bạn đã chọn giới tính nữ";
+            } else {
+                resultElement.innerHTML = "Bạn chưa chọn giới tính";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h3>Chọn giới tính</h3>
+        <p>In ra thông báo khi giới tính được thay đổi</p>
+        <form>
+            <select id="gender" onchange="ChangeGender();">
+                <option value="">-- Chọn --</option>
+                <option value="nam">Nam</option>
+                <option value="nu">Nữ</option>
+            </select>
+        </form>
+        <div id="resultMessage" class="result">Bạn chưa chọn giới tính</div>
+    </div>
+</body>
+</html>

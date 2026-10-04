@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VD6</title>
+    <style>
+        .box {
+            border: 1px solid #000;
+            padding: 15px;
+            width: 300px;
+        }
+
+            .box h3 {
+                margin-top: 0;
+                font-size: 20px;
+            }
+
+            .box div {
+                margin-bottom: 5px;
+            }
+    </style>
+    <script type="text/javascript">
+        function XemKetQua() {
+            var sothich = document.getElementsByName("sothich");
+            var result = "Sở thích là: ";
+            for (var i = 0; i < sothich.length; i++) {
+                if (sothich[i].checked) {
+                    result += "[" + sothich[i].value + "] ";
+                }
+            }
+            alert(result.trim());
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h3>Hãy chọn các sở thích của bạn</h3>
+        <form>
+            <div><input type="checkbox" name="sothich" value="Đi chơi" checked /> Đi chơi</div>
+            <div><input type="checkbox" name="sothich" value="Đi du lịch" checked /> Đi du lịch</div>
+            <div><input type="checkbox" name="sothich" value="Đi ăn" /> Đi ăn</div>
+            <div><input type="checkbox" name="sothich" value="Đi siêu thị" /> Đi siêu thị</div>
+            <div><input type="checkbox" name="sothich" value="học lập trình" checked /> học lập trình</div>
+            <div><input type="checkbox" name="sothich" value="Ở nhà nghỉ ngơi" /> Ở nhà nghỉ ngơi</div>
+            <br />
+            <input type="button" value="Xem kết quả" onclick="XemKetQua();" />
+        </form>
+    </div>
+</body>
+</html>
